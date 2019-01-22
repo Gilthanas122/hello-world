@@ -37,3 +37,8 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testCompile("org.springframework.boot:spring-boot-starter-test")
 }
+
+checkstyle {
+    toolVersion "7.6.1"
+    configFile = rootProject.file('checkstyle/checkstyle.xml')
+}
