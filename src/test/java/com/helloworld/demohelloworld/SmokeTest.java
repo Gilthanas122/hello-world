@@ -12,7 +12,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class SmokeTest {
 
     @Autowired
-    private RestController controller;
+    private HomeController controller;
 
     @Test
     public void contexLoads() throws Exception {
