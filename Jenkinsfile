@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage ('Build Servlet Project') {
             steps {
-                sh  'gradle buildg'
+                sh  'gradle build'
             }
 
             post{
