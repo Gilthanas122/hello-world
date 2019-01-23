@@ -16,12 +16,7 @@ apply plugin: 'io.spring.dependency-management'
 apply plugin: 'checkstyle'
 apply plugin: 'war'
 
-tasks.withType(Checkstyle) {
-    ignoreFailures = true
-    reports {
-        html.enabled = true
-    }
-}
+
 
 group = 'com.helloworld'
 version = '0.0.1-SNAPSHOT'
@@ -39,7 +34,3 @@ dependencies {
     testCompile("org.springframework.boot:spring-boot-starter-test")
 }
 
-checkstyle {
-    toolVersion "7.6.1"
-    configFile = rootProject.file('checkstyle/checkstyle.xml')
-}
