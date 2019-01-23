@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage ('Build Servlet Project') {
             steps {
-                sh  'mvn clean package'
+                sh  'gradle buildg'
             }
 
             post{
