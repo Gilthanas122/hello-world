@@ -16,7 +16,7 @@ pipeline {
         }
         stage ('Deploy build in a staging area'){
             steps{
-                build job: 'pityu-deploy-pipeline'
+                build job: 'Rueppellii - Practice/pityu_deploy_pipeline'
             }
         }
     }
