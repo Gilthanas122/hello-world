@@ -29,7 +29,7 @@ pipeline {
             steps{
                 timeout (time: 5, unit:'DAYS'){
                     input message: 'Approve PRODUCTION Deployment?'
-                }g
+                }
 
                 build job : 'Rueppellii - Practice/pityu-production-pipeline'
             }
