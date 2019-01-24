@@ -14,5 +14,10 @@ pipeline {
                 }
             }
         }
+        stage ('Deploy build in a staging area'){
+            steps{
+                build job: 'pityu-deploy-pipeline'
+            }
+        }
     }
 }
