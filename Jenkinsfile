@@ -20,7 +20,7 @@ pipeline {
         stage ('Deploy Build in Staging Area'){
             steps{
 
-                build job : 'Project pityu_deploy_pipeline'
+                build job : 'Rueppellii - Practice/pityu_deploy_pipeline'
 
             }
         }
@@ -29,9 +29,9 @@ pipeline {
             steps{
                 timeout (time: 5, unit:'DAYS'){
                     input message: 'Approve PRODUCTION Deployment?'
-                }
+                }g
 
-                build job : 'pityu-production-pipeline'
+                build job : 'Rueppellii - Practice/pityu-production-pipeline'
             }
 
             post{
