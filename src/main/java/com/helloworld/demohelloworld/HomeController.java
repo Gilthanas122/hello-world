@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class HomeController {
 
     @RequestMapping("/")
-    public @ResponseBody String greetingxy3() {
+    public @ResponseBody String greetingdsdfg3() {
         return "Hello World2";
     }
 
