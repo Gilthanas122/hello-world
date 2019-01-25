@@ -34,7 +34,7 @@ ENTRYPOINT ["java", "-jar", "app.jar"]
 ***
 ### Create a Webhook in your github account
 * Go to your repo and open Settings/Webhooks
-[Checkout image for webhook settings](https://github.com/Gilthanas122/hello-world/blob/master/Images/githubwebhookcut.png)
+* [Checkout image for webhook settings](https://github.com/Gilthanas122/hello-world/blob/master/Images/githubwebhookcut.png)
 
 ### Create a Jenkins Job
 
