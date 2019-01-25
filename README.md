@@ -55,7 +55,6 @@ ENTRYPOINT ["java", "-jar", "app.jar"]
     ]
 }
 ```
-
 ***
 
 ### Create an AWS Elastic Beanstalk app
