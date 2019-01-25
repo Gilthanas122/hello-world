@@ -17,7 +17,7 @@
 
 * Create a Dockerfile(without any extension) in your app root directory
 * Login to your docker account
-  'docker login'
+`sudo docker login`
 * 
 
 
