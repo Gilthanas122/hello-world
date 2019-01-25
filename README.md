@@ -58,12 +58,12 @@ ENTRYPOINT ["java", "-jar", "app.jar"]
 * Choose the [freestyle job](https://github.com/Gilthanas122/hello-world/blob/master/Images/newitemcut.jpg)
 
 * [General settings](https://github.com/Gilthanas122/hello-world/blob/master/Images/githubdiscardcut.png)
-*      You should insert you repo URL from the address bar
+      You should insert you repo URL from the address bar
 
 * [Source code management](https://github.com/Gilthanas122/hello-world/blob/master/Images/githubrepocut.png)
-*      Here insert your repo -> copy link from clone
-*       For credentials create a username+password credentials with your account details
-*      The advanced/refspec is where you specify if it should be triggered by a pull request (first piece of code) or pushes (second)
+     Here insert your repo -> copy link from clone
+     For credentials create a username+password credentials with your account details
+     The advanced/refspec is where you specify if it should be triggered by a pull request (first piece of code) or pushes (second)
 
 * [Build triggers](https://github.com/Gilthanas122/hello-world/blob/master/Images/gitpullrequestczt.png)
 
