@@ -16,8 +16,8 @@
 ### Creating a Dockerfile for your app
 
 * Create a Dockerfile(without any extension) in your app root directory
-* Login to your docker account
+* Login to your docker account (navigate in the terminal to the root directory of you app)
 `sudo docker login`
-* 
+* Create a docker image `sudo docker build -t <yourimagename> <dockerhubusername/dockerhubrepositoryname>`
 
 
