@@ -6,12 +6,13 @@
 * if using Intellij Docker Integration plugin
 * [Docker installed](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04)
 * [Jenkins installed](https://www.digitalocean.com/community/tutorials/how-to-install-jenkins-on-ubuntu-16-04)
-
+***
 
 ### Setting up a Dockerhub account and creating a repository
 
 * Go to hub.docker.com and sign up
 * Create a public repository
+***
 
 ### Creating a Dockerfile for your app
 
@@ -22,8 +23,12 @@
 * Create a docker image `sudo docker build -t <yourimagename> <dockerhubusername/dockerhubrepositoryname>`
 ```docker
 FROM openjdk:8-jdk-alpine
-ARG JAR_FILE=build/libs/demohelloworld-0.0.1-SNAPSHOT.jar
+ARG JAR_FILE=build/libs/yourappname-0.0.1-SNAPSHOT.jar
 COPY ${JAR_FILE} app.jar
 ENTRYPOINT ["java", "-jar", "app.jar"]
 ```
-
+* Tag your docker image 
+`sudo docker tag <imageID> <dockerhubusername/dockerhubrepositoryname>`
+* Push your image to dockerhub
+`sudo docker push <dockerhubusername/dockerhubrepositoryname>`
+***
