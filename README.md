@@ -16,8 +16,8 @@
 
 ### Creating a Dockerimage of your app
 
+* Type in to your terminal within the root directory of you app `./gradlew build` to rebuild your app's .jar file
 * Create a Dockerfile(without any extension) in your app root directory
-
 * Login to your docker account (navigate in the terminal to the root directory of you app)
 `sudo docker login`
 * Create a docker image `sudo docker build -t <yourimagename> <dockerhubusername/dockerhubrepositoryname>`
@@ -33,3 +33,6 @@ ENTRYPOINT ["java", "-jar", "app.jar"]
 `sudo docker push <dockerhubusername/dockerhubrepositoryname>`
 ***
 ### Create a Jenkins Job
+
+* Login to your jenkins account and create a new job
+
