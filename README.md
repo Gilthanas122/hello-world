@@ -14,7 +14,7 @@
 * Create a public repository
 ***
 
-### Creating a Dockerfile for your app
+### Creating a Dockerimage of your app
 
 * Create a Dockerfile(without any extension) in your app root directory
 
@@ -32,3 +32,4 @@ ENTRYPOINT ["java", "-jar", "app.jar"]
 * Push your image to dockerhub
 `sudo docker push <dockerhubusername/dockerhubrepositoryname>`
 ***
+### Create a Jenkins Job
