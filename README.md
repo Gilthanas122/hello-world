@@ -39,5 +39,19 @@ ENTRYPOINT ["java", "-jar", "app.jar"]
 
 ### Create a Jenkins Job
 
-* Login to your jenkins account and create a new job
+* Login to your jenkins account and create a [new job](https://github.com/Gilthanas122/hello-world/blob/master/Images/newitemcut.jpg)
+* Choose the [freestyle job](https://github.com/Gilthanas122/hello-world/blob/master/Images/newitemcut.jpg)
+* [General settings](https://github.com/Gilthanas122/hello-world/blob/master/Images/githubdiscardcut.png)
+*      You should inser you repo URL from the address bar
+* [Source code management](https://github.com/Gilthanas122/hello-world/blob/master/Images/githubrepocut.png)
+*      Here insert your repo -> copy link from clone
+*       For credentials create a username+password credentials with your account details
+*      The advanced/refspec is where you specify if it should be triggered by a pull request (first piece of code) or pushes (second)
+* [Build triggers](https://github.com/Gilthanas122/hello-world/blob/master/Images/gitpullrequestczt.png)
+* [Inject environment variables for pushing image to dockerhub](https://github.com/Gilthanas122/hello-world/blob/master/Images/injectpasscut.png)
+* [Inject passwords](https://github.com/Gilthanas122/hello-world/blob/master/Images/injectpass.png)
+* [Build 1 - Gradle script and execute shell](https://github.com/Gilthanas122/hello-world/blob/master/Images/build1cut.png)
+* [Build 2 - Docker build and publish](https://github.com/Gilthanas122/hello-world/blob/master/Images/build3.png)
+* [Build 3 - AWS EB 1](https://github.com/Gilthanas122/hello-world/blob/master/Images/build4aws1.png)
+* [Build 4 - AWS EB 2](https://github.com/Gilthanas122/hello-world/blob/master/Images/build5aws2.png)
 
