@@ -1,7 +1,7 @@
 {
     "AWSEBDockerrunVersion": "1",
         "Image": {
-            "Name": "gilthanas122/hello-world"
+            "Name": "gilthanas122/hello-world:latest"
         },
         "Ports": [
         { 
