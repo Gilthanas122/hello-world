@@ -32,6 +32,10 @@ ENTRYPOINT ["java", "-jar", "app.jar"]
 * Push your image to dockerhub
 `sudo docker push <dockerhubusername/dockerhubrepositoryname>`
 ***
+### Create a Webhook in your github account
+* Go to your repo and open Settings/Webhooks
+
+
 ### Create a Jenkins Job
 
 * Login to your jenkins account and create a new job
