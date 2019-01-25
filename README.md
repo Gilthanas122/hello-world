@@ -9,3 +9,5 @@
 
 [Docker installed] (https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04)
 [1]: https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04
+
+[I'm an inline-style link](https://www.google.com)
