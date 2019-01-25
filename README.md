@@ -40,8 +40,27 @@ ENTRYPOINT ["java", "-jar", "app.jar"]
 
 * Push your image to dockerhub
 `sudo docker push <dockerhubusername/dockerhubrepositoryname>`
+* Create a Dockerrun.aws.json file in your root
+```docker
+{
+    "AWSEBDockerrunVersion": "1",
+        "Image": {
+            "Name": "<dockerusername>/<dockerreponame>:latest"
+        },
+        "Ports": [
+        { 
+            "ContainerPort": "8080",
+            "hostPort": "8080"
+        }
+    ]
+}
+```
 
 ***
+
+### Create an AWS Elastic Beanstalk app
+
+* [Tutorial for creating it](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.environments.html)
 
 ### Create a Webhook in your github account
 
