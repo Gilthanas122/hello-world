@@ -67,7 +67,8 @@ ENTRYPOINT ["java", "-jar", "app.jar"]
 
 * [Checkout image for webhook settings](https://github.com/Gilthanas122/hello-world/blob/master/Images/githubwebhookcut.png)
 
-* Under let me select individual events -> you can customise your webhook triggers
+* This one only handles pull request -> connected to pullsq
+Under let me select individual events -> you can customise your webhook triggers
 
 ### Create a Jenkins Job
 
