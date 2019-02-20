@@ -1,13 +1,13 @@
-#Introduction to TEST
+# Introduction to TEST
 
-##UnitTesting
+## UnitTesting
 
 * Testing is the process of checking the functionality of an application to ensure it runs as per requirements
 * UnitTesting test one single entity - class or method
 * Manual (slower) or Automated (faster) testing
 * Unit Test Case is a part of code, which ensures that another part of code (method) works as expected -> JUnit and TestNg Framework for Testing 
 
-##Integration Test
+## Integration Test
 
 * @RunWith(SpringRunner.class) is used to provide a bridge between Spring Boot test features and JUnit. Whenever we are using any Spring Boot testing features in out JUnit tests, this annotation will be required.
 
