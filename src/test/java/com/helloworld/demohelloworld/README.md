@@ -13,6 +13,8 @@
 
 ## Integration Test
 
+[Link to the used article](https://www.baeldung.com/integration-testing-in-spring)
+
 * @RunWith(SpringRunner.class) is used to provide a bridge between Spring Boot test features and JUnit. Whenever we are using any Spring Boot testing features in out JUnit tests, this annotation will be required.
 
 * @DataJpaTest provides some standard setup needed for testing the persistence layer:
@@ -22,9 +24,80 @@
     * turning on SQL logging
  * TestEntityManager
    * The TestEntityManager provided by Spring Boot is an alternative to the standard JPA EntityManager that provides methods commonly used when writing tests.
-   
+ ```java
+ @RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(classes = { ApplicationConfig.class })
+@WebAppConfiguration
+public class GreetControllerIntegrationTest {
+    ....
+}
+```
+* @ContextConfiguration, we provided the ApplicationConfig.class config class which loads the configuration we need for this particular test.
+### Verify view name
+```java
+@Test
+public void givenHomePageURI_whenMockMVC_thenReturnsIndexJSPViewName() {
+    this.mockMvc.perform(get("/homePage")).andDo(print())
+       
+      .andExpect(view().name("index"));
+}
+```
+* perform() method will call a get request method which returns the ResultActions. Using this result we can have assertion expectations on response like content, HTTP status, header, etc
+* andDo(print()) will print the request and response. This is helpful to get detailed view in case of error
+* andExpect() will expect the provided argument. In our case we are expecting “index” to be returned via MockMvcResultMatchers.view()
+### Verify response body
+```java
+@Test
+public void givenGreetURI_whenMockMVC_thenVerifyResponse() {
+    MvcResult mvcResult = this.mockMvc.perform(get("/greet"))
+      .andDo(print()).andExpect(status().isOk())
+      .andExpect(jsonPath("$.message").value("Hello World!!!"))
+      .andReturn();
+     
+    Assert.assertEquals("application/json;charset=UTF-8", 
+      mvcResult.getResponse().getContentType());
+}
+```
+* andExpect(MockMvcResultMatchers.status().isOk()) will verify that response http status is Ok i.e. 200. This ensures that request was successfully executed
+* andExpect(MockMvcResultMatchers.jsonPath(“$.message”).value(“Hello World!!!”)) will verify that response content matches with the argument “Hello World!!!“. Here we used jsonPath which extracts response content and provide the requested value
+* andReturn() will return the MvcResult object which is used, when we have to verify something which is not achievable by library. You can see we have added assertEquals to match the content type of response that is extracted from MvcResult object
+
+### Send GET Request with Path Variable
+```java
+@Test
+public void givenGreetURIWithPathVariable_whenMockMVC_thenResponseOK() {
+    this.mockMvc
+      .perform(get("/greetWithPathVariable/{name}", "John"))
+      .andDo(print()).andExpect(status().isOk())
+       
+      .andExpect(content().contentType("application/json;charset=UTF-8"))
+      .andExpect(jsonPath("$.message").value("Hello World John!!!"));
+}
+```
+### Send GET Request with Query Parameters
+```java
+@Test
+public void givenGreetURIWithQueryParameter_whenMockMVC_thenResponseOK() {
+    this.mockMvc.perform(get("/greetWithQueryVariable")
+      .param("name", "John Doe")).andDo(print()).andExpect(status().isOk())
+      .andExpect(content().contentType("application/json;charset=UTF-8"))
+      .andExpect(jsonPath("$.message").value("Hello World John Doe!!!"));
+}
+```
+
+###  Send Post Request
+```java
+@Test
+public void givenGreetURIWithPost_whenMockMVC_thenVerifyResponse() {
+    this.mockMvc.perform(post("/greetWithPost")).andDo(print())
+      .andExpect(status().isOk()).andExpect(content()
+      .contentType("application/json;charset=UTF-8"))
+      .andExpect(jsonPath("$.message").value("Hello World!!!"));
+}
+```
+
 ## Test Doubles
-[Link to the used artice](https://www.javaworld.com/article/2074508/core-java/mocks-and-stubs---understanding-test-doubles-with-mockito.html)
+[Link to the used article](https://www.javaworld.com/article/2074508/core-java/mocks-and-stubs---understanding-test-doubles-with-mockito.html)
 ### Mocking 
 * to avoid dependencies -> without wiring in our full persistence layer
 * @TestConfiguration annotation that can be used on classes in src/test/java to indicate that they should not be picked up by scanning
@@ -137,7 +210,7 @@ public class ApplicationTest {
 ```
 
 ## Assertions
-[Link to the used artice](https://www.baeldung.com/spring-assert)
+[Link to the used article](https://www.baeldung.com/spring-assert)
 *By using methods of the Assert class, we can write assumptions which we expect to be true
 * Assert’s methods are static
 * They throw either IllegalArgumentException or IllegalStateException
