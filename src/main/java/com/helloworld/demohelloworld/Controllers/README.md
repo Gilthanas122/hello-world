@@ -62,6 +62,7 @@
 * Multiple-resource bodies, consisting of a multipart body, each containing a different section of information. These are relatively rare.
 
 ## HTTP RESPONSE STATUS CODES
+[Source](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
 * HTTP response status codes indicate whether a specific HTTP request has been successfully completed.
 #### Information responses
 * 101 Switching Protocol This code is sent in response to an Upgrade request header by the client, and indicates the protocol the server is switching to.
@@ -80,3 +81,38 @@
 * 500 Internal server error
 * 502 Bad gateway
 * 503 Service Unavailable
+
+## HTTP - HTTPS
+### HTTP
+[Source](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
+*  protocol which allows the fetching of resources, such as HTML documents
+* foundation of any data exchange on the Web and a client-server protocol, which means requests are initiated by the recipient, usually the Web browser
+* The messages sent by the client, usually a Web browser, are called requests and the messages sent by the server as an answer are called responses.
+#### Components
+##### Client
+*  user-agent is any tool that acts on the behalf of the user. This role is primarily performed by the Web browser;
+* initiating request
+##### Webserver
+* On the opposite side of the communication channel, is the server which serves the document as requested by the client. 
+##### Proxies
+* Between the Web browser and the server, numerous computers and machines relay the HTTP message
+* Those operating at the application layers are generally called proxies
+* Functions: caching, filtering, load balancing, authentication, logging
+#### Basic aspects of HTTP
+* SIMPLE -> simple and readable by humans
+* EXTENSIBLE -> New functionality can even be introduced by a simple agreement between a client and a server about a new header's semantics.
+* STATELESS -> there is no link between two requests being successively carried out on the same connection <-> not sessionsless -> cookies allow the use of stateful sessions
+* CONNECTION -> HTTP subsequently relies on the TCP standard, which is connection-based, even though a connection is not always required.
+### HTTPS
+[Source](https://tiptopsecurity.com/how-does-https-work-rsa-encryption-explained/)
+* The HTTP Strict Transport Security header informs the browser that it should never load a site using HTTP and should automatically convert all attempts to access the site using HTTP to HTTPS requests instead.
+*  HTTP is not secure because it transports information in plain text
+* 1994 new encryption protocol named Secure Socket Layer (SSL) to the original HTTP. This became known as “HTTP over SSL” or “HTTP Secure”. Otherwise known as HTTPS.
+* keeps your stuff secret by encrypting it as it moves between your browser and the website’s server
+##### You need three things to encrypt your data:
+The data you want to encrypt
+A unique encryption key (just a long string of random text)
+An encryption algorithm (a math function that “garbles” the data)
+* symmetric encryption -> same key -> Symmetric encryption, by itself, won’t work because you don’t control the other end of the connection
+* assymetric encryption -> key pairs: When one of the keys (either public or private) is used to encrypt some data, only the other key can be used to decrypt it.
+
