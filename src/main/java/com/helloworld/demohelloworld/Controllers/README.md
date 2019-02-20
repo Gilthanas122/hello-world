@@ -61,6 +61,22 @@
 * Single-resource bodies, consisting of a single file of unknown length, encoded by chunks with Transfer-Encoding set to chunked.
 * Multiple-resource bodies, consisting of a multipart body, each containing a different section of information. These are relatively rare.
 
-
-
-
+## HTTP RESPONSE STATUS CODES
+* HTTP response status codes indicate whether a specific HTTP request has been successfully completed.
+#### Information responses
+* 101 Switching Protocol This code is sent in response to an Upgrade request header by the client, and indicates the protocol the server is switching to.
+#### Successful responses
+* 200 Ok
+* 201 Created
+#### Redirection messages
+* 300 Multiple choice
+* 302 Found
+#### Client error responses
+* 400 Bad request
+* 401 Unauthorised
+* 404 Not found
+* 408 Request timeout
+#### Server error responses
+* 500 Internal server error
+* 502 Bad gateway
+* 503 Service Unavailable
