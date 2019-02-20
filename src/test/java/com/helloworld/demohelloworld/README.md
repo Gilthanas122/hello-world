@@ -24,6 +24,7 @@
    * The TestEntityManager provided by Spring Boot is an alternative to the standard JPA EntityManager that provides methods commonly used when writing tests.
    
 ## Test Doubles
+[Link to the used artice](https://www.javaworld.com/article/2074508/core-java/mocks-and-stubs---understanding-test-doubles-with-mockito.html)
 ### Mocking 
 * to avoid dependencies -> without wiring in our full persistence layer
 * @TestConfiguration annotation that can be used on classes in src/test/java to indicate that they should not be picked up by scanning
@@ -115,5 +116,60 @@ public void testSpyReturnsRealValues() throws Exception {
 }
 </string></string>
 ```
+## Endpoint Testing
+* MockMvc creates a mock environment
+* Checks if that given endpoint returns with status ok and with the expected string
+ ```java
+@RunWith(SpringRunner.class)
+@SpringBootTest
+@AutoConfigureMockMvc
+public class ApplicationTest {
+
+    @Autowired
+    private MockMvc mockMvc;
+
+    @Test
+    public void shouldReturnDefaultMessage() throws Exception {
+        this.mockMvc.perform(get("/")).andDo(print()).andExpect(status().isOk())
+                .andExpect(content().string(containsString("Hello World")));
+    }
+}
+```
+
+## Assertions
+[Link to the used artice](https://www.baeldung.com/spring-assert)
+*By using methods of the Assert class, we can write assumptions which we expect to be true
+* Assert’s methods are static
+* They throw either IllegalArgumentException or IllegalStateException
+* The first parameter is usually an argument for validation or a logical condition to check
+* The last parameter is usually an exception message which is displayed if the validation fails
+* The message can be passed either as a String parameter or as a Supplier<String> parameter
+
+ isTrue()
+ * It accepts a boolean condition and throws an IllegalArgumentException when the condition is false
+ equals()
+ * Checks if the two return values are equal
+ state()
+ * As the name suggests, it should be used when the method mustn’t be continued because of an illegal state of the object.
+ * F.E. if a car is running, we cannot fuel it
+ ```java
+ Assert.state(this.state.equals("stop"), "car must be stopped");
+ ```
+notNull() or isNull()
+* checks if it is null or not
+isInstanceOf()
+* is an instance of another object of the specific type
+isAssignable()
+* To check types, we can use Assert.isAssignable():
+hasLength()
+*We can check if a String isn’t blank,
+hastText()
+* String contains at least one non-whitespace character
+doesNotContain()
+* String argument doesn’t contain a specific substring
+notEmpty()
+* asserts that a collection/map/array is not empty meaning that it’s not null and contains at least one element;
+noNullElements()
+*  array doesn’t contain null elements
 
 
