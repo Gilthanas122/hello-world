@@ -96,6 +96,24 @@ public void addCustomerWithDummyTest() {
  Assert.assertEquals(1, addressBook.getNumberOfCustomers());
 }
 ```
- 
+### Test Spy
+*  wrap a real object and then verify or modify it's behaviour to support your testing
+>Here is an example were we check the standard behaviour of a List. 
+>Note that we can both verify that the add method is called and 
+>also assert that the item was added to the list.
+ ```java
+@Spy
+List<string> listSpy = new ArrayList<string>();
+
+@Test
+public void testSpyReturnsRealValues() throws Exception {
+ String s = "dobie";
+ listSpy.add(new String(s));
+
+ verify(listSpy).add(s);
+ assertEquals(1, listSpy.size());
+}
+</string></string>
+```
 
 
