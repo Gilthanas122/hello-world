@@ -23,8 +23,8 @@
  * TestEntityManager
    * The TestEntityManager provided by Spring Boot is an alternative to the standard JPA EntityManager that provides methods commonly used when writing tests.
    
-## Mocking -> child of Test doubles
-
+## Test Doubles
+### Mocking 
 * to avoid dependencies -> without wiring in our full persistence layer
 * @TestConfiguration annotation that can be used on classes in src/test/java to indicate that they should not be picked up by scanning
 * @MockBean. It creates a Mock for the Repository which can be used to bypass the call to the actual Repository
@@ -37,8 +37,65 @@ public void addCustomerWithDummyTest() {
  Assert.assertEquals(1, addressBook.getNumberOfCustomers());
 }
 ```
+### Mock Object
+* verify object's behaviour during a test <-> Stubing: to provide results to whatever you are testing.
+```java
+public class SimpleTradingService implements TradingService{
 
+  TradeRepository tradeRepository;
+  AuditService auditService;
+ 
+  public SimpleTradingService(TradeRepository tradeRepository, 
+                              AuditService auditService)
+  {
+    this.tradeRepository = tradeRepository;
+    this.auditService = auditService;
+  }
+
+  public Long createTrade(Trade trade) throws CreateTradeException {
+  Long id = tradeRepository.createTrade(trade);
+  auditService.logNewTrade(trade);
+  return id;
+}
+```
+```java
+@Mock
+TradeRepository tradeRepository;
+ 
+@Mock
+AuditService auditService;
+@Test
+public void testAuditLogEntryMadeForNewTrade() throws Exception { 
+  Trade trade = new Trade("Ref 1", "Description 1");
+  when(tradeRepository.createTrade(trade)).thenReturn(anyLong()); 
+  
+  TradingService tradingService 
+    = new SimpleTradingService(tradeRepository, auditService);
+  tradingService.createTrade(trade);
+  
+  verify(auditService).logNewTrade(trade);
+}
+```
+* Last line does the checking on the mocked AuditService
+
+### Stubing
 
 * Stubing: lightweight versions of system components to help with testing -> part of test doubles just like mock
+* Return controlled values to the object being tested
+* These are described as indirect inputs to the test
+ > Following example The SimplePricingService has one collaborating object which is the trade repository
+ > The trade repository provides trade prices to the pricing service through the getPriceForTrade method.
+ > In the following example we stub the PricingRepository to return known values 
+ > which can be used to test the business logic of the SimpleTradeService.
+ ```java
+@Test
+public void addCustomerWithDummyTest() {
+ Customer dummy = mock(Customer.class);
+ AddressBook addressBook = new AddressBook();
+ addressBook.addCustomer(dummy);
+ Assert.assertEquals(1, addressBook.getNumberOfCustomers());
+}
+```
+ 
 
 
