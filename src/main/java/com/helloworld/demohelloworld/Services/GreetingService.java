@@ -27,4 +27,8 @@ public class GreetingService {
     public Hello findByGreetingText(String greet) {
         return helloRepository.findByGreetingText(greet);
     }
+
+    public void addHello(Hello hello) {
+        helloRepository.save(hello);
+    }
 }

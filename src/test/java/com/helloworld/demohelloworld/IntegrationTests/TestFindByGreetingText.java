@@ -26,7 +26,7 @@ public class TestFindByGreetingText {
     }
 
     @Test
-    public void whenFindByName_thenReturnEmployee() {
+    public void whenFindByGreetingText_thenReturnHello() {
         // given
         Hello hello = new Hello("hi");
         entityManager.persist(hello);
