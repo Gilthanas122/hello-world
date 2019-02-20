@@ -1,7 +1,6 @@
 package com.helloworld.demohelloworld;
 
-import org.assertj.core.util.diff.Delta;
-import org.assertj.core.util.diff.DeltaComparator;
+import com.helloworld.demohelloworld.Models.MathForTesting;
 import org.junit.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -24,7 +23,7 @@ public class MathTests {
 
     @Test
     public void addNegativeIntegers() {
-        final int expected = -3;
+        final int expected = -4;
         Assert.assertEquals(expected, mathForTesting.add(-2, -2));
     }
 

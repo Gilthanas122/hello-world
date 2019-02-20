@@ -1,4 +1,4 @@
-package com.helloworld.demohelloworld;
+package com.helloworld.demohelloworld.Models;
 
 public class MathForTesting {
 
