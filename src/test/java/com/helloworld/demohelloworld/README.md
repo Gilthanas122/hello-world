@@ -100,7 +100,7 @@ public void addCustomerWithDummyTest() {
 *  wrap a real object and then verify or modify it's behaviour to support your testing
 >Here is an example were we check the standard behaviour of a List. 
 >Note that we can both verify that the add method is called and 
->also assert that the item was added to the list.
+>also assert that the item was added to the list. <-> if used mock -> only mocking the behaviour so size() gonna be 0
  ```java
 @Spy
 List<string> listSpy = new ArrayList<string>();
