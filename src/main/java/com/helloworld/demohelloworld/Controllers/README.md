@@ -116,3 +116,16 @@ An encryption algorithm (a math function that “garbles” the data)
 * symmetric encryption -> same key -> Symmetric encryption, by itself, won’t work because you don’t control the other end of the connection
 * assymetric encryption -> key pairs: When one of the keys (either public or private) is used to encrypt some data, only the other key can be used to decrypt it.
 
+## URL
+[Source](https://www.ibm.com/support/knowledgecenter/en/SSGMCP_5.1.0/com.ibm.cics.ts.internet.doc/topics/dfhtl_uricomp.html)
+* URL (Uniform Resource Locator) is a specific type of URI (Universal Resource Identifier)
+* URL is used when a web client makes a request to a server for a resource
+* URI is defined as any character string that identifies a resource. A URL is defined as those URIs that identify a resource by its location or by the means used to access it, rather than by a name or other attribute of the resource.
+### Parts of URL
+#### SCHEME
+* identifies the protocol to be used to access the resource on the Internet. It can be HTTP (without SSL) or HTTPS (with SSL).
+#### PATH
+* The path identifies the specific resource in the host that the web client wants to access. For example, /software/htp/cics/index.html.
+#### Query string
+* Follows the path component, and provides a string of information that the resource can use for some purpose (for example, as parameters for a search or as data to be processed
+* Usually a string of name and value pairs; for example, term=bluebird
