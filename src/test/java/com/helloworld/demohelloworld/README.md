@@ -211,18 +211,18 @@ public class ApplicationTest {
 
 ## Assertions
 [Link to the used article](https://www.baeldung.com/spring-assert)
-*By using methods of the Assert class, we can write assumptions which we expect to be true
+* By using methods of the Assert class, we can write assumptions which we expect to be true
 * Assert’s methods are static
 * They throw either IllegalArgumentException or IllegalStateException
 * The first parameter is usually an argument for validation or a logical condition to check
 * The last parameter is usually an exception message which is displayed if the validation fails
 * The message can be passed either as a String parameter or as a Supplier<String> parameter
 
- isTrue()
+ #### isTrue()
  * It accepts a boolean condition and throws an IllegalArgumentException when the condition is false
- equals()
+ #### equals()
  * Checks if the two return values are equal
- state()
+ #### state()
  * As the name suggests, it should be used when the method mustn’t be continued because of an illegal state of the object.
  * F.E. if a car is running, we cannot fuel it
  ```java
