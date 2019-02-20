@@ -16,7 +16,22 @@ apply plugin: 'io.spring.dependency-management'
 apply plugin: 'maven'
 apply plugin: 'war'
 
+group 'com.test'
+version '1.0-SNAPSHOT'
 
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'org.testng', name: 'testng', version: '6.14.3'
+}
+
+test {
+    useTestNG()
+}
 group = 'com.helloworld'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
