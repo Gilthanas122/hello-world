@@ -228,21 +228,21 @@ public class ApplicationTest {
  ```java
  Assert.state(this.state.equals("stop"), "car must be stopped");
  ```
-notNull() or isNull()
+#### notNull() or isNull()
 * checks if it is null or not
-isInstanceOf()
+#### isInstanceOf()
 * is an instance of another object of the specific type
-isAssignable()
+#### isAssignable()
 * To check types, we can use Assert.isAssignable():
-hasLength()
+#### hasLength()
 *We can check if a String isn’t blank,
-hastText()
+#### hastText()
 * String contains at least one non-whitespace character
-doesNotContain()
+#### doesNotContain()
 * String argument doesn’t contain a specific substring
-notEmpty()
+#### notEmpty()
 * asserts that a collection/map/array is not empty meaning that it’s not null and contains at least one element;
-noNullElements()
+#### noNullElements()
 *  array doesn’t contain null elements
 
 
