@@ -1,7 +1,7 @@
 ## DATA FLOW
 
 ### Layers
-
+![alt text](https://github.com/Gilthanas122/hello-world/blob/master/src/main/java/images/imagesforreadme/domain.jpeg "Logo Title Text 1")
 [Source](https://medium.com/@RogelioOrts/layered-architecture-spring-boot-af7dc071d2b5)
 * Layered architecture: it’s a client–server architecture in which presentation, application processing, and data management functions are physically separated
 * Each layer has different components
@@ -47,3 +47,7 @@
 
 #### Boot
 * This layer depends on every other layers previously mentioned and store the MainApplication class which starts the Spring Boot application. Because it depends on the other layers, Spring dependency injection mechanism can inject the annotated components of the others layers.
+
+
+## MVC
+![alt text](https://github.com/Gilthanas122/hello-world/blob/master/src/main/java/images/imagesforreadme/mvc.jpg "Logo Title Text 1")
