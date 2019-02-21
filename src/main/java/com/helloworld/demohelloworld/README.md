@@ -67,9 +67,9 @@
 * The components that belong to a specific layer can use the components that belong to the same layer or to the layer below it
 * A data transfer object is an object that is just a simple data container, and these objects are used to carry data between different processes and between the layers of our application
 * A domain model consists of three different objects:
-* 1. A domain service is a stateless class that provides operations which are related to a domain concept but aren’t a “natural” part of an entity or a value object
-* 2. An entity is an object that is defined by its identity which stays unchanged through its entire lifecycle
-* 3. A value object describes a property or a thing, and these objects don’t have their own identity or lifecycle. The lifecycle of a value object is bound to the lifecycle of an entity
+1. A domain service is a stateless class that provides operations which are related to a domain concept but aren’t a “natural” part of an entity or a value object
+2. An entity is an object that is defined by its identity which stays unchanged through its entire lifecycle
+3. A value object describes a property or a thing, and these objects don’t have their own identity or lifecycle. The lifecycle of a value object is bound to the lifecycle of an entity
 
 ## MVC
 ![alt text](https://github.com/Gilthanas122/hello-world/blob/master/src/main/java/images/imagesforreadme/mvc.jpg "Logo Title Text 1")
