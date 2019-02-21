@@ -49,6 +49,17 @@
 ### Boot
 * This layer depends on every other layers previously mentioned and store the MainApplication class which starts the Spring Boot application. Because it depends on the other layers, Spring dependency injection mechanism can inject the annotated components of the others layers
 
+## Source 2 -> 3 layers
+[Source](https://www.petrikainulainen.net/software-development/design/understanding-spring-web-application-architecture-the-classic-way/)
+### Web Layer
+* Is the uppermost layer of a web application. It is responsible of processing user’s input and returning the correct response back to the user. The web layer must also handle the exceptions thrown by the other layers. Because the web layer is the entry point of our application, it must take care of authentication and act as a first line of defense against unauthorized users.
+### Service Leyer
+* Resides below the web layer. It acts as a transaction boundary and contains both application and infrastructure services. The application services provides the public API of the service layer. They also act as a transaction boundary and are responsible of authorization. The infrastructure services contain the “plumbing code” that communicates with external resources such as file systems, databases, or email servers. Often these methods are used by more than a one application service.
+### Repository layer
+* is the lowest layer of a web application. It is responsible of communicating with the used data storage.
+
+### Components and Layer communication
+* The components that belong to a specific layer can use the components that belong to the same layer or to the layer below it.
 
 ## MVC
 ![alt text](https://github.com/Gilthanas122/hello-world/blob/master/src/main/java/images/imagesforreadme/mvc.jpg "Logo Title Text 1")
