@@ -101,6 +101,10 @@
 
 ## Spring Boot Components
 [Source](https://www.journaldev.com/7989/key-components-and-internals-of-spring-boot-framework)
+
+##### Probably this is the one needed
+* @Component is the most generic Spring annotation. A Java class decorated with @Component is found during classpath scanning and registered in the context as a Spring bean. @Service, @Repository, and @Controller are specializations of @Component, which are used for more specific cases.
+
 ### Spring Boot Starters
 * Combine a group of common or related dependencies into single dependencies
 * Add dependencies to pom.xml or build.gradle -> tedious work
