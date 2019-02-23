@@ -51,15 +51,25 @@
 
 ## Source 2 -> 3 layers
 [Source](https://www.petrikainulainen.net/software-development/design/understanding-spring-web-application-architecture-the-classic-way/)
+![alt text](https://github.com/Gilthanas122/hello-world/blob/master/src/main/java/images/imagesforreadme/layer2.png "Logo Title Text 1")
+
 ### Web Layer
 * Is the uppermost layer of a web application. It is responsible of processing user’s input and returning the correct response back to the user. The web layer must also handle the exceptions thrown by the other layers. Because the web layer is the entry point of our application, it must take care of authentication and act as a first line of defense against unauthorized users.
+* Handles only data transfer objects.
 ### Service Leyer
-* Resides below the web layer. It acts as a transaction boundary and contains both application and infrastructure services. The application services provides the public API of the service layer. They also act as a transaction boundary and are responsible of authorization. The infrastructure services contain the “plumbing code” that communicates with external resources such as file systems, databases, or email servers. Often these methods are used by more than a one application service.
+* Resides below the web layer. It acts as a transaction boundary and contains both application and infrastructure services. The application services provides the public API of the service layer. They also act as a transaction boundary and are responsible of authorization. The infrastructure services contain the “plumbing code” that communicates with external resources such as file systems, databases, or email servers. Often these methods are used by more than a one application service
+* Takes data transfer objects (and basic types) as method parameters. It can handle domain model objects but it can return only data transfer objects back to the web layer.
 ### Repository layer
-* is the lowest layer of a web application. It is responsible of communicating with the used data storage.
+* Is the lowest layer of a web application. It is responsible of communicating with the used data storage.
+* The repository layer takes entities (and basic types) as method parameters and returns entities (and basic types).
 
 ### Components and Layer communication
-* The components that belong to a specific layer can use the components that belong to the same layer or to the layer below it.
+* The components that belong to a specific layer can use the components that belong to the same layer or to the layer below it
+* A data transfer object is an object that is just a simple data container, and these objects are used to carry data between different processes and between the layers of our application
+* A domain model consists of three different objects:
+1. A domain service is a stateless class that provides operations which are related to a domain concept but aren’t a “natural” part of an entity or a value object
+2. An entity is an object that is defined by its identity which stays unchanged through its entire lifecycle
+3. A value object describes a property or a thing, and these objects don’t have their own identity or lifecycle. The lifecycle of a value object is bound to the lifecycle of an entity
 
 ## MVC
 ![alt text](https://github.com/Gilthanas122/hello-world/blob/master/src/main/java/images/imagesforreadme/mvc.jpg "Logo Title Text 1")
@@ -91,6 +101,10 @@
 
 ## Spring Boot Components
 [Source](https://www.journaldev.com/7989/key-components-and-internals-of-spring-boot-framework)
+
+##### Probably this is the one needed
+* @Component is the most generic Spring annotation. A Java class decorated with @Component is found during classpath scanning and registered in the context as a Spring bean. @Service, @Repository, and @Controller are specializations of @Component, which are used for more specific cases.
+
 ### Spring Boot Starters
 * Combine a group of common or related dependencies into single dependencies
 * Add dependencies to pom.xml or build.gradle -> tedious work
